@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movie[
+    <!ELEMENT movie (film*, director*)>
+    <!ELEMENT film (title, actor, year, type)>
+    <!ATTLIST film filmID CDATA #REQUIRED
+               directedby CDATA #REQUIRED> 
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT actor (#PCDATA)>
+    <!ELEMENT year  (#PCDATA)>
+    <!ELEMENT type  (#PCDATA)>
+    
+    <!ELEMENT director (name)>
+    <!ATTLIST director directID CDATA #REQUIRED
+                        created CDATA #REQUIRED>
+    <!ELEMENT name (#PCDATA)>                    
+]>
+<movie>
+    <film filmID="F1" directedby="direct1">
+        <title>Alien</title>
+        <actor>Sigourney Weaver</actor>
+        <year>1979</year>
+        <type>sci-fi</type>
+    </film>
+    <film filmID="F2" directedby="direct2">
+        <title>Terminator</title>
+        <actor>Arnold Schwarzenegger</actor>
+        <year>1984</year>
+        <type>action</type>
+    </film>
+    <film filmID="F3" directedby="direct2">
+        <title>Titanic</title>
+        <actor>Leonardo DiCaprio</actor>
+        <year>1997</year>
+        <type>drama</type>
+    </film>
+    <film filmID="F4" directedby="direct3, direct4 ">
+        <title>Avengers 4</title>
+        <actor>Robert Downey Jr.</actor>
+        <year>2019</year>
+        <type>comic</type>
+    </film>
+    <director directID="direct1" created="F1">
+        <name>Ridley Scott</name>
+    </director>
+    <director directID="direct2" created="F2, F3">
+        <name>James Cameron</name>
+    </director>
+    <director directID="direct3" created="F4">
+        <name>Anthony Russo</name>
+    </director>
+    <director directID="direct4" created="F4">
+        <name>Joe Russo</name>
+    </director>
+</movie>

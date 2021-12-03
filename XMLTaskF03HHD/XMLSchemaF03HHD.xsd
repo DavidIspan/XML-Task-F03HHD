@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.0" vc:maxVersion="1.1">
+    
+    <xs:element name="movie">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name ="film" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="title" type="string"/>
+                            <xs:element name="actor" type="string"/>
+                            <xs:element name="year" type="string"/>
+                            <xs:element name="type" type="string"/>
+                        </xs:sequence>
+                        <xs:attribute name="filmID" type="string"/>
+                        <xs:attribute name="directedby" type="string"/>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name ="director" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="string"/>
+                        </xs:sequence>
+                        <xs:attribute name="directID" type="string"/>
+                        <xs:attribute name="created" type="string"/> 
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>complexType>
+        
+    </xs:element>
+    
+</xs:schema>
